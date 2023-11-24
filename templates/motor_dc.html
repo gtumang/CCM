@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS :has OS Dock with CSS Trigonometric Functions 🤙</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+  <!-- <script src="js/func.js"></script> -->
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <h2>
+    <center>Motor DC</center>
+  </h2>
+  <img class="img" src="{{url_for('static', filename='motor_dc.jpeg')}}" />
+  <nav class="blocks">
+    <a href="#" style="text-decoration:none;color:white;" class="block">
+      <div>
+        <form method="post" action="/motor-dc">
+          <input class="block__item" type="submit" value="EN" name="enable" />
+        </form>
+      </div>
+    </a>
+    <a href="#" style="text-decoration:none;color:white;" class="block">
+      <div>
+        <form method="post" action="/motor-dc">
+          <input class="block__item" type="submit" value="DIR" name="direction" />
+        </form>
+      </div>
+    </a>
+    <a href="#" class="block">
+      <div>
+        <form action="/motor-dc" method="post">
+          VEL: <input class="child" type="text" name="velocity" minlength="0" maxlength="4" required>
+        </form>
+      </div>
+    </a>
+    <a href="/motor-dc/readme" class="block">
+      <div class="block__item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15" stroke-width="1" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+        </svg>
+      </div>
+    </a>
+    <a href="/" class="block">
+      <div class="block__item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+        </svg>
+      </div>
+    </a>
+  </nav>
+  <div class="blocks" id="barraEstados">
+    <!-- <div class="block">
+      <div>
+        <form action="/motor-dc" method="post">
+          VEL: <input class="child" type="text" name="velocity" minlength="0" maxlength="4" required>
+        </form>
+      </div>
+    </div> -->
+
+    <div class="block">
+      <div>
+        <img src="{{ imgEn }}" alt="">
+      </div>
+    </div>
+
+    <div class="block">
+      <div>
+        <img src="{{ imgDir }}" alt="">
+      </div>
+    </div>
+
+    <div class="block">
+      <h4 class="textoVel">
+        vel (rpm):
+      </h4>
+      <h5 class="valVel">
+        {{ val_vel }}
+      </h5>
+    </div>
+  </div>
+  <!-- partial -->
+
+</body>
+
+</html>
